@@ -1,0 +1,14 @@
+section#home
+  a.opener 
+    span.wording Présentation
+  .content 
+    .block
+      p.myNameIs Je m'appelle 
+      h1 Benoît 
+        .lastName GUILLAUME,
+        .job développeur web front-end.
+      p.intro Ce site présente mon parcours, mon activité
+      .pictos
+        each href,icon in {'envelope':'mailto:bnt.gllm@gmail.com','mobile fa-2':'#','file-pdf-o':'cv.pdf'}
+          a(href=href,target="_blank")
+            i.fa(class='fa-'+icon) 

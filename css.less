@@ -1,0 +1,570 @@
+@black:#000;
+@darkgrey:#111;
+@darkmediumgrey:#333;
+@mediumgrey:#666;
+@lightgrey:#999;
+@white:#eee;
+
+@adveris:#1538aa;
+@nm:#7a16df;
+
+@ecv:#dd0849;
+@quimper:#8b1592;
+@fcil:#d46ad7;
+@lpcm:#00ffde;
+@estei:#2e5eb5;
+
+@cine:#1c95e2;
+@read:#eb245f;
+@geek:#5f539f;
+@sport:#144cb2;
+@cook:#f1763b;
+@chess:#525254;
+
+@font-face{
+	font-family : "Avant-Garde";
+	src : url('fonts/AvantGarde.ttf');
+}
+
+@font-face{
+	font-family : "Aller Display";
+	src : url('fonts/AllerDisplay.ttf');
+}
+
+@font-face{
+	font-family : "American Type";
+	src : url('fonts/AmericanTypItcDEEMed.ttf');
+}
+
+@font-face{
+	font-family : "American Type Bold";
+	src : url('fonts/AmericanTypItcTEEBoldItalic.ttf');
+}
+
+@font-face{
+	font-family : "Vin's Dojo";
+	src : url("fonts/Vin's Dojo.ttf");
+}
+
+.size(@width, @height:@width) {
+	width: @width;
+	height: @height;
+}
+
+// Rotation non-animée + translation
+	.transform(@angle,@translateX:0,@translateY:0) {
+		-webkit-transform: rotate(@angle) translate(@translateX,@translateY);
+		-moz-transform: rotate(@angle) translate(@translateX,@translateY);
+		-ms-transform: rotate(@angle) translate(@translateX,@translateY);
+		-o-transform: rotate(@angle) translate(@translateX,@translateY);
+	}
+
+// Gradient circulaire
+	.bgRadialGradient(@color1,@color2) {
+		background-image: -moz-radial-gradient(@color1,@color2);
+		background-image: -ms-radial-gradient(@color1,@color2);
+		background-image: -o-radial-gradient(@color1,@color2);
+		background-image: -webkit-radial-gradient(@color1,@color2);
+	}
+
+// Rotation animation
+	@-webkit-keyframes rotation {
+	    0%, 40%   {-webkit-transform: rotate(0deg);}
+	    60%, 100% {-webkit-transform: rotate(360deg);}
+	}
+	@keyframes rotation {
+	    0%, 40% { transform: rotate(0deg); }
+	    60%, 100% { transform: rotate(360deg); }
+	}
+
+// Animation gradient
+	.bgColorTransition{
+	    -webkit-transition: background-color ease-out 500ms;
+	    -moz-transition: background-color ease-out 500ms;
+	    -o-transition: background-color ease-out 500ms;
+	    transition: background-color ease-out 500ms;
+	}
+
+.fa-refresh {
+  -webkit-animation: rotation 5s infinite linear;
+  animation: rotation 5s infinite linear;
+  margin:0 10px 0 0;
+}
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	&::selection{
+		background: red;
+		color:@white;
+	}
+}
+
+ul li{ list-style-type: none; }
+
+body{
+	color:@white;
+	background: @black;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+}
+
+header{
+	background: @black;
+	nav{
+		display:inline;
+		// float: right;
+		a{
+			display: inline-block;
+			cursor: pointer;
+			color:@white;
+			text-decoration: none;
+			i.fa{
+				margin: 5px;
+			}
+			&:hover,&.active{
+				i.fa{
+					color:red;
+				}
+			}
+		}
+	}
+	#welcome{
+		color:@darkgrey;
+		font-family: "Vin's Dojo";
+		font-size: 30px;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		a{
+			text-decoration: none;
+			color:@white;
+			&:hover{
+				color:red;
+			}
+		}
+	}
+	&.landscape{
+		float: left;
+		width: 75px;
+		position: relative;
+		#welcome{
+			.transform(-90deg,0,-85px);
+			position: absolute;
+			top: 50%;
+			width: 250px;
+		}
+		nav{
+			width: 100%;
+			position: absolute;
+			a{
+				width: 100%;
+				text-align: center;
+			}
+			&.socials{ bottom: 0; }
+		}
+	}
+	&.portrait{
+		nav{
+			position: absolute;
+			top: 0;
+
+			&.menu{ left:0; }
+			&.socials{ right: 0; }
+			a{
+				display: inline-block;
+				i.fa{
+					display: inline-block;
+				}
+			}
+			&.menu{ float: left; }
+			&.socials{ float: right; }
+		}
+	}
+}
+
+
+#container{
+	background: @darkgrey;
+	section{
+		.bgRadialGradient(@darkmediumgrey,@darkgrey);
+		a.opener{
+			text-transform: uppercase;
+			font-family: 'Avant-Garde';
+			display: block;
+			cursor: pointer;
+			text-align: center;
+			background: @darkgrey;
+			color:red;
+			&:hover{
+				background: red;
+				color:@white;
+				.bgColorTransition;
+			}
+			.wording{
+				font-size: 20px;
+			}
+		}
+		.content{
+			display: none;
+			h2{
+				color:@white;
+				text-transform: uppercase;
+			}
+			.third{
+				float: left;
+				width: 33%;
+			}
+		}
+		&.active{
+			a.opener{
+				background: red;
+				color:@darkgrey;
+				cursor:default;
+			}
+			.content{
+				margin:0 5%;
+				display:block;
+				width: 100%;
+			}
+		}
+		&#home{
+			p{
+				&.myNameIs{
+					font-family: 'Avant-Garde';
+					font-size: 2.5rem;
+				}
+				&.intro{
+					font-family: "American Type Bold";
+					font-size: 2.3rem;
+				}
+			}
+
+			h1{
+				font-family: "Aller Display";
+				font-size: 3rem;
+				.lastName, .job{
+					text-transform: uppercase;
+				}
+				.lastName {
+					display:inline;
+				}
+			}
+			.pictos{
+				a{
+					background:@white;
+					border-radius: 40px;
+					display: inline-flex;
+					padding: 5px;
+					.size(30px);
+					text-align: center;
+					margin-right: 5px;
+					cursor: pointer;
+					align-items: center;
+					justify-content: center;
+					&:nth-child(2){
+						i{
+							font-size: 26px;
+						}
+					}
+					i{
+						color:@darkgrey;
+						position: absolute;
+					}
+					&:hover{
+						background: red;
+						i {
+							color: @white;
+						}
+					}
+				}
+			}
+		}
+		&#about{
+			.third{
+				h2{
+					font-family: 'Aller Display';
+					text-transform: uppercase;
+					text-align: center;
+				}
+				&.time{
+					font-family: 'Avant-Garde';
+					h2.circle{
+						background: url('img/perso.png') no-repeat;
+						background-size: contain;
+						.size(150px);
+						padding: 44px 34px;
+					}
+					.title{
+						font-family: 'Aller Display';
+						text-transform: uppercase;
+						display: inline-block;
+					}
+					.perso .title{ color:#9a0a0a; }
+					.work .title{ color:#e41313; }
+					.dodo .title{ color:#6d0c0c; }
+				}
+				&.qualities,
+				&.hobbies{
+					h2{
+						text-align: right;
+					}
+					ul{
+						background: url('img/bracket.png') no-repeat;
+						background-size: contain;
+						padding-left: 35px;
+					}
+				}
+				&.qualities{
+					ul li{
+						font-family:'American Type';
+					}
+				}
+				&.hobbies{
+					ul li{
+						font-family: 'Aller Display';
+						text-transform: uppercase;
+						display: block;
+						&.cine{ color:@cine; }
+						&.read{ color:@read; }
+						&.geek{ color:@geek; }
+						&.sport{ color:@sport; }
+						&.cook{ color:@cook; }
+						&.chess{ color:@chess; }
+					}
+				}			
+			}
+		}
+		&#work{
+			.logo-adv{
+				width: 22%;
+				display: inline-block;
+				a{
+				    display: block;
+				    margin: 0 auto;
+				    width: 132px;					
+				}
+			}
+			.logo-nm{
+				width: 55%;
+				display: inline-block;
+				a{
+				    display: block;
+				    margin: 0 auto;
+				    width: 235px;					
+				}
+			}
+			img.timeline{
+				width: 100%;
+			}
+			.duration{
+				font-family:'Aller Display';
+				.century{
+					color:@darkmediumgrey;
+					font-size: 20px;
+				}
+			}
+			.company{
+				display: inline-block;
+				text-align: center;
+				.more{
+					border-radius: 50%;
+					color:@darkgrey;
+					.size(15px);
+					margin: 0 auto;
+					font-weight: bold;
+					&:hover{
+						color:@white;
+						cursor: pointer;
+					}
+				}
+				&.adveris{
+					width: 22%;
+					.gt{ color:@adveris; }
+					.periode,
+					.year{
+						display: block;
+					}
+					.more{
+						background: @adveris;
+					}
+				}
+				&.nm{
+					width: 55%;
+					.start{
+						display: inline-block;
+						.firstday{
+
+						}
+					}
+					.gt{ 
+						color:@nm;
+					}
+					.more{
+						background: @nm;
+					}
+				}
+			}
+			.block{
+				width: 75%;
+				padding: 10px;
+				display: none;
+				&.block-adveris{
+					background: url('img/bulle_adv.png') no-repeat bottom right, @adveris;
+				}
+				&.block-nm{
+					background: url('img/bulle_nm.png') no-repeat bottom right, @nm;
+				}
+			}
+		}
+		&#education{
+			.bubble{
+				display: none;
+				color:@white;
+				h3{
+					font-family:'Aller Display';
+				}
+				p{
+					font-family:'Aller Light';
+				}
+				&.global{
+					background: yellow;
+				}
+				&.ecv{
+					background: @ecv;
+				}
+				&.quimper{
+					background: @quimper;
+				}
+				&.fcil{
+					background: @fcil;
+				}
+				&.lpcm{
+					background: @lpcm;
+				}
+				&.estei{
+					background: @estei;
+				}
+			}
+			.formation{
+				text-align: center;
+				display: inline-block;
+				float: left;
+				.when{
+					font-family: 'Aller Display';
+				}
+				.where{
+					font-family: 'Vin\'s Dojo';
+				}
+				a.details{
+					display: inline-block;
+					border-radius:50%;
+					font-size: 12px;
+					.size(30px);
+					&:hover{
+						color:@white;
+					}
+				}
+				a.details{
+					color:@darkgrey;
+				}
+				&.ecv{
+					.when{
+						color:@ecv;
+					}
+					a.details{
+						background:@ecv;
+					}
+				}
+				&.quimper{
+					.when{
+						color:@quimper;
+					}
+					a.details{
+						background:@quimper;
+					}
+				}
+				&.fcil{
+					.when{
+						color:@fcil;
+					}
+					a.details{
+						background:@fcil;
+					}
+				}
+				&.lpcm{
+					.when{
+						color:@lpcm;
+					}
+					a.details{
+						background:@lpcm;
+					}
+				}
+				&.estei{
+					.when{
+						color:@estei;
+					}
+					a.details{
+						background:@estei;
+					}
+				}				
+			}
+		}
+
+	}
+	&.landscape{
+		section{
+			display: flex;
+			float: left;
+			align-items: center;
+			a.opener{
+				display: block;
+				float: left;
+				width: 50px;
+				.wording{
+					display: block;
+					position: relative;
+					top: 50%;
+					width: 250px;
+					.transform(-90deg,0,-99px);
+				}
+			}
+		}
+	}
+
+	&.portrait{
+		section{
+			&.active{
+				height: 400px;
+			}
+		}
+	}
+}
+
+footer{
+	background: @black;
+	p{
+		color:@darkgrey;
+		font-size: 10px;
+	}
+	&.landscape{
+		float: left;
+		width: 25px;
+		position: relative;
+		p{
+			.transform(-90deg,0,-112px);
+			position: relative;
+			top: 50%;
+			width: 250px;
+		}
+	}
+	&.portrait{
+		.size(100%,25px);
+		p{
+			text-align: center;
+			line-height: 15px;
+		}
+	}
+}
