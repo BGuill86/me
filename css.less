@@ -111,6 +111,20 @@ body{
 	font-family: Arial, sans-serif;
 }
 
+.more{
+	display: inline-block;
+	border-radius:50%;
+	font-size: 12px;
+	.size(15px);
+	margin: 0 auto;
+	font-weight: bold;
+	color:@darkgrey;
+	&:hover{
+		color:@white;
+		cursor: pointer;
+	}
+}
+
 header{
 	background: @black;
 	nav{
@@ -369,17 +383,6 @@ header{
 			.company{
 				display: inline-block;
 				text-align: center;
-				.more{
-					border-radius: 50%;
-					color:@darkgrey;
-					.size(15px);
-					margin: 0 auto;
-					font-weight: bold;
-					&:hover{
-						color:@white;
-						cursor: pointer;
-					}
-				}
 				&.adveris{
 					width: 22%;
 					.gt{ color:@adveris; }
@@ -448,6 +451,10 @@ header{
 					background: @estei;
 				}
 			}
+			img.timeline{
+				width: 100%;
+				padding-bottom: 25px;
+			}
 			.formation{
 					text-align: center;
 					display: inline-block;
@@ -461,23 +468,11 @@ header{
 				.where{
 					font-family: 'Vin\'s Dojo';
 				}
-				a.details{
-					display: inline-block;
-					border-radius:50%;
-					font-size: 12px;
-					.size(30px);
-					&:hover{
-						color:@white;
-					}
-				}
-				a.details{
-					color:@darkgrey;
-				}
 				&.ecv{
 					.when{
 						color:@ecv;
 					}
-					a.details{
+					a.more{
 						background:@ecv;
 					}
 				}
@@ -485,7 +480,7 @@ header{
 					.when{
 						color:@quimper;
 					}
-					a.details{
+					a.more{
 						background:@quimper;
 					}
 				}
@@ -493,7 +488,7 @@ header{
 					.when{
 						color:@fcil;
 					}
-					a.details{
+					a.more{
 						background:@fcil;
 					}
 				}
@@ -501,7 +496,7 @@ header{
 					.when{
 						color:@lpcm;
 					}
-					a.details{
+					a.more{
 						background:@lpcm;
 					}
 				}
@@ -509,7 +504,7 @@ header{
 					.when{
 						color:@estei;
 					}
-					a.details{
+					a.more{
 						background:@estei;
 					}
 				}				
