@@ -1,9 +1,23 @@
 section#contact
   a.opener 
     span.wording Contact
-  .content 
-    .block1             
-      form
-        input(type='text',placeholder='Email')
-        textarea Message
-        input(type='submit',value='Valider')
+  .content             
+    form#form.half
+      input(type='text',placeholder='Votre nom...')
+      input(type='text',placeholder='Votre email...')
+      textarea(placeholder='Votre message...')
+      input(type='submit',value='Envoyer')
+    #coordonnees.half
+      .me 
+          .name Benoit GUILLAUME
+          .job Développeur web front-end
+      .location
+          img(src="img/paris.png")
+          .place 
+            .city 75019 PARIS 
+            .country FRANCE
+      .contact
+          each wording, icon in {'envelope':'bnt.gllm@gmail.com','mobile fa-2':'06 27 80 76 48','file-pdf-o':'mon C.V.'}
+            .line
+                i.fa.fa-2(class='fa-'+icon)
+                span.wording= wording
