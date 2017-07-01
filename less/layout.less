@@ -25,6 +25,23 @@ body{
 	font-family: Arial, sans-serif;
 }
 
+.block{
+	display: none;
+	padding: 10px;
+	border-radius: 5px;
+	color:@white;
+	position: absolute;
+	a.close{
+		display: inline-block;
+		float: right;
+		cursor: pointer;
+		opacity: 0.5;
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+
 .more{
 	display: inline-block;
 	border-radius:50%;

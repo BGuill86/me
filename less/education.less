@@ -1,14 +1,22 @@
 #education{
 	.block{
-		display: none;
-		padding: 10px;
-		border-radius: 5px;
-		color:@white;
 		h3{
 			font-family:'Aller Display';
+			margin-bottom: 10px;
+			&:not(:first){
+				margin-top: 15px;
+			}
 		}
 		p{
 			font-family:'Aller Light';
+			padding-left: 10px;
+			&:before{
+				content:'>';
+				font-family:'Aller Display';
+				font-weight: bold;
+				position: relative;
+				left:-5px;
+			}
 		}
 		&.global{
 			background: yellow;

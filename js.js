@@ -113,6 +113,12 @@ $(document).ready(function(){
         }
     });
 
+    $('a.close').on('click', function(){
+        var block = $('.block:visible');
+        block.hide();
+        $('.more').text('+');  
+    });
+
     // popups work & education
     $('.more').on('click', function(e){
 
