@@ -1,0 +1,73 @@
+header{
+	background: @black;
+	nav{
+		display:inline;
+		// float: right;
+		a{
+			display: inline-block;
+			cursor: pointer;
+			color:@white;
+			text-decoration: none;
+			i.fa{
+				margin: 5px;
+			}
+			&:hover,&.active{
+				i.fa{
+					color:red;
+				}
+			}
+		}
+	}
+	#welcome{
+		color:@darkgrey;
+		font-family: "Vin's Dojo";
+		font-size: 30px;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		a{
+			text-decoration: none;
+			color:@white;
+			&:hover{
+				color:red;
+			}
+		}
+	}
+	&.landscape{
+		float: left;
+		width: 75px;
+		position: relative;
+		#welcome{
+			.transform(-90deg,0,-85px);
+			position: absolute;
+			top: 50%;
+			width: 250px;
+		}
+		nav{
+			width: 100%;
+			position: absolute;
+			a{
+				width: 100%;
+				text-align: center;
+			}
+			&.socials{ bottom: 0; }
+		}
+	}
+	&.portrait{
+		nav{
+			position: absolute;
+			top: 0;
+
+			&.menu{ left:0; }
+			&.socials{ right: 0; }
+			a{
+				display: inline-block;
+				i.fa{
+					display: inline-block;
+				}
+			}
+			&.menu{ float: left; }
+			&.socials{ float: right; }
+		}
+	}
+}

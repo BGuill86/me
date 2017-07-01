@@ -50,8 +50,10 @@ $(document).ready(function(){
                 });
 
     		}else{
-				// on ferme le slide actif200
+				// on ferme le slide actif
 				$(activePanel).animate({width: "50px"}, 200);
+
+                $('.block').hide();
 
 				//... que l'on ouvre ensuite !
                 var content = resizeActiveWidth();
@@ -107,6 +109,26 @@ $(document).ready(function(){
             var content = resizeActiveWidth();
             $('section.active').width(content);
             $('section.active').height(hwindow).width(content);
+
+        }
+    });
+
+    // popups work & education
+    $('.more').on('click', function(e){
+
+        var parent = $(this).parent();
+        var formation = parent.attr('class').split(' ')[1];
+        var block = $('.block.'+formation);
+
+        $('.block').hide(); 
+
+        if($(this).text() == '+'){
+            block.show();
+            $('.more').text('+');
+            $(this).text('-');  
+        
+        }else{
+            $(this).text('+');
 
         }
     });

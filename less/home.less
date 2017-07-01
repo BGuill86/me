@@ -1,0 +1,52 @@
+#home{
+	p{
+		&.myNameIs{
+			font-family: 'Avant-Garde';
+			font-size: 2.5rem;
+		}
+		&.intro{
+			font-family: "American Type Bold";
+			font-size: 2.3rem;
+		}
+	}
+
+	h1{
+		font-family: "Aller Display";
+		font-size: 3rem;
+		.lastName, .job{
+			text-transform: uppercase;
+		}
+		.lastName {
+			display:inline;
+		}
+	}
+	.pictos{
+		a{
+			background:@white;
+			border-radius: 40px;
+			display: inline-flex;
+			padding: 5px;
+			.size(30px);
+			text-align: center;
+			margin-right: 5px;
+			cursor: pointer;
+			align-items: center;
+			justify-content: center;
+			&:nth-child(2){
+				i{
+					font-size: 26px;
+				}
+			}
+			i{
+				color:@darkgrey;
+				position: absolute;
+			}
+			&:hover{
+				background: red;
+				i {
+					color: @white;
+				}
+			}
+		}
+	}
+}

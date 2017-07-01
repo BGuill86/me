@@ -1,50 +1,19 @@
-@black:#000;
-@darkgrey:#111;
-@darkmediumgrey:#333;
-@mediumgrey:#666;
-@lightgrey:#999;
-@white:#eee;
 
-@adveris:#1538aa;
-@nm:#7a16df;
+@import "less/fonts.less";
 
-@ecv:#dd0849;
-@quimper:#8b1592;
-@fcil:#d46ad7;
-@lpcm:#00ffde;
-@estei:#2e5eb5;
+@import "less/footer.less";
+@import "less/header.less";
 
-@cine:#1c95e2;
-@read:#eb245f;
-@geek:#5f539f;
-@sport:#144cb2;
-@cook:#f1763b;
-@chess:#525254;
+@import "less/about.less";
+@import "less/contact.less";
+@import "less/education.less";
+@import "less/home.less";
+@import "less/work.less";
 
-@font-face{
-	font-family : "Avant-Garde";
-	src : url('fonts/AvantGarde.ttf');
-}
+@import "less/layout.less";
+@import "less/variables.less";
 
-@font-face{
-	font-family : "Aller Display";
-	src : url('fonts/AllerDisplay.ttf');
-}
 
-@font-face{
-	font-family : "American Type";
-	src : url('fonts/AmericanTypItcDEEMed.ttf');
-}
-
-@font-face{
-	font-family : "American Type Bold";
-	src : url('fonts/AmericanTypItcTEEBoldItalic.ttf');
-}
-
-@font-face{
-	font-family : "Vin's Dojo";
-	src : url("fonts/Vin's Dojo.ttf");
-}
 
 .size(@width, @height:@width) {
 	width: @width;
@@ -68,136 +37,26 @@
 	}
 
 // Rotation animation
-	@-webkit-keyframes rotation {
-	    0%, 40%   {-webkit-transform: rotate(0deg);}
-	    60%, 100% {-webkit-transform: rotate(360deg);}
-	}
-	@keyframes rotation {
-	    0%, 40% { transform: rotate(0deg); }
-	    60%, 100% { transform: rotate(360deg); }
-	}
+@-webkit-keyframes rotation {
+    0%, 40%   {-webkit-transform: rotate(0deg);}
+    60%, 100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes rotation {
+    0%, 40% { transform: rotate(0deg); }
+    60%, 100% { transform: rotate(360deg); }
+}
 
 // Animation gradient
-	.bgColorTransition{
-	    -webkit-transition: background-color ease-out 500ms;
-	    -moz-transition: background-color ease-out 500ms;
-	    -o-transition: background-color ease-out 500ms;
-	    transition: background-color ease-out 500ms;
-	}
-
-.fa-refresh {
-  -webkit-animation: rotation 5s infinite linear;
-  animation: rotation 5s infinite linear;
-  margin:0 10px 0 0;
+.bgColorTransition{
+    -webkit-transition: background-color ease-out 500ms;
+    -moz-transition: background-color ease-out 500ms;
+    -o-transition: background-color ease-out 500ms;
+    transition: background-color ease-out 500ms;
 }
 
-*{
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
-	&::selection{
-		background: red;
-		color:@white;
-	}
-}
 
-ul li{ list-style-type: none; }
 
-body{
-	color:@white;
-	background: @black;
-	box-sizing: border-box;
-	overflow: hidden;
-	font-family: Arial, sans-serif;
-}
 
-.more{
-	display: inline-block;
-	border-radius:50%;
-	font-size: 12px;
-	.size(15px);
-	margin: 0 auto;
-	font-weight: bold;
-	color:@darkgrey;
-	&:hover{
-		color:@white;
-		cursor: pointer;
-	}
-}
-
-header{
-	background: @black;
-	nav{
-		display:inline;
-		// float: right;
-		a{
-			display: inline-block;
-			cursor: pointer;
-			color:@white;
-			text-decoration: none;
-			i.fa{
-				margin: 5px;
-			}
-			&:hover,&.active{
-				i.fa{
-					color:red;
-				}
-			}
-		}
-	}
-	#welcome{
-		color:@darkgrey;
-		font-family: "Vin's Dojo";
-		font-size: 30px;
-		display: block;
-		text-align: center;
-		margin: 0 auto;
-		a{
-			text-decoration: none;
-			color:@white;
-			&:hover{
-				color:red;
-			}
-		}
-	}
-	&.landscape{
-		float: left;
-		width: 75px;
-		position: relative;
-		#welcome{
-			.transform(-90deg,0,-85px);
-			position: absolute;
-			top: 50%;
-			width: 250px;
-		}
-		nav{
-			width: 100%;
-			position: absolute;
-			a{
-				width: 100%;
-				text-align: center;
-			}
-			&.socials{ bottom: 0; }
-		}
-	}
-	&.portrait{
-		nav{
-			position: absolute;
-			top: 0;
-
-			&.menu{ left:0; }
-			&.socials{ right: 0; }
-			a{
-				display: inline-block;
-				i.fa{
-					display: inline-block;
-				}
-			}
-			&.menu{ float: left; }
-			&.socials{ float: right; }
-		}
-	}
-}
 
 
 #container{
@@ -244,342 +103,6 @@ header{
 				width: 100%;
 			}
 		}
-		&#home{
-			p{
-				&.myNameIs{
-					font-family: 'Avant-Garde';
-					font-size: 2.5rem;
-				}
-				&.intro{
-					font-family: "American Type Bold";
-					font-size: 2.3rem;
-				}
-			}
-
-			h1{
-				font-family: "Aller Display";
-				font-size: 3rem;
-				.lastName, .job{
-					text-transform: uppercase;
-				}
-				.lastName {
-					display:inline;
-				}
-			}
-			.pictos{
-				a{
-					background:@white;
-					border-radius: 40px;
-					display: inline-flex;
-					padding: 5px;
-					.size(30px);
-					text-align: center;
-					margin-right: 5px;
-					cursor: pointer;
-					align-items: center;
-					justify-content: center;
-					&:nth-child(2){
-						i{
-							font-size: 26px;
-						}
-					}
-					i{
-						color:@darkgrey;
-						position: absolute;
-					}
-					&:hover{
-						background: red;
-						i {
-							color: @white;
-						}
-					}
-				}
-			}
-		}
-		&#about{
-			.third{
-				h2{
-					font-family: 'Aller Display';
-					text-transform: uppercase;
-					text-align: center;
-				}
-				&.time{
-					font-family: 'Avant-Garde';
-					h2.circle{
-						background: url('img/perso.png') no-repeat;
-						background-size: contain;
-						.size(150px);
-						padding: 44px 34px;
-					}
-					.title{
-						font-family: 'Aller Display';
-						text-transform: uppercase;
-						display: inline-block;
-					}
-					.perso .title{ color:#9a0a0a; }
-					.work .title{ color:#e41313; }
-					.dodo .title{ color:#6d0c0c; }
-				}
-				&.qualities,
-				&.hobbies{
-					h2{
-						text-align: right;
-					}
-					ul{
-						background: url('img/bracket.png') no-repeat;
-						background-size: contain;
-						padding-left: 35px;
-					}
-				}
-				&.qualities{
-					ul li{
-						font-family:'American Type';
-					}
-				}
-				&.hobbies{
-					ul li{
-						font-family: 'Aller Display';
-						text-transform: uppercase;
-						display: block;
-						&.cine{ color:@cine; }
-						&.read{ color:@read; }
-						&.geek{ color:@geek; }
-						&.sport{ color:@sport; }
-						&.cook{ color:@cook; }
-						&.chess{ color:@chess; }
-					}
-				}			
-			}
-		}
-		&#work{
-			.logo-adv{
-				width: 22%;
-				display: inline-block;
-				a{
-				    display: block;
-				    margin: 0 auto;
-				    width: 132px;					
-				}
-			}
-			.logo-nm{
-				width: 55%;
-				display: inline-block;
-				a{
-				    display: block;
-				    margin: 0 auto;
-				    width: 235px;					
-				}
-			}
-			img.timeline{
-				width: 100%;
-			}
-			.duration{
-				font-family:'Aller Display';
-				.century{
-					color:@darkmediumgrey;
-					font-size: 20px;
-				}
-			}
-			.company{
-				display: inline-block;
-				text-align: center;
-				&.adveris{
-					width: 22%;
-					.gt{ color:@adveris; }
-					.periode,
-					.year{
-						display: block;
-					}
-					.more{
-						background: @adveris;
-					}
-				}
-				&.nm{
-					width: 55%;
-					.start{
-						display: inline-block;
-						.firstday{
-
-						}
-					}
-					.gt{ 
-						color:@nm;
-					}
-					.more{
-						background: @nm;
-					}
-				}
-			}
-			.block{
-				width: 75%;
-				padding: 10px;
-				display: none;
-				&.block-adveris{
-					background: url('img/bulle_adv.png') no-repeat bottom right, @adveris;
-				}
-				&.block-nm{
-					background: url('img/bulle_nm.png') no-repeat bottom right, @nm;
-				}
-			}
-		}
-		&#education{
-			.bubble{
-				display: none;
-				color:@white;
-				h3{
-					font-family:'Aller Display';
-				}
-				p{
-					font-family:'Aller Light';
-				}
-				&.global{
-					background: yellow;
-				}
-				&.ecv{
-					background: @ecv;
-				}
-				&.quimper{
-					background: @quimper;
-				}
-				&.fcil{
-					background: @fcil;
-				}
-				&.lpcm{
-					background: @lpcm;
-				}
-				&.estei{
-					background: @estei;
-				}
-			}
-			img.timeline{
-				width: 100%;
-				padding-bottom: 25px;
-			}
-			.formation{
-					text-align: center;
-					display: inline-block;
-					float: left;
-					max-width: 250px;
-					height: 200px;
-					padding: 0 12px;
-				.when{
-					font-family: 'Aller Display';
-				}
-				.where{
-					font-family: 'Vin\'s Dojo';
-				}
-				&.ecv{
-					.when{
-						color:@ecv;
-					}
-					a.more{
-						background:@ecv;
-					}
-				}
-				&.quimper{
-					.when{
-						color:@quimper;
-					}
-					a.more{
-						background:@quimper;
-					}
-				}
-				&.fcil{
-					.when{
-						color:@fcil;
-					}
-					a.more{
-						background:@fcil;
-					}
-				}
-				&.lpcm{
-					.when{
-						color:@lpcm;
-					}
-					a.more{
-						background:@lpcm;
-					}
-				}
-				&.estei{
-					.when{
-						color:@estei;
-					}
-					a.more{
-						background:@estei;
-					}
-				}				
-			}
-		}
-		&#contact{
-			.half{
-				width: 50%;
-				float: left;
-			}
-			form#form{
-				input, 
-				textarea{
-					border:none;
-					display: block;
-					font-size: 20px;
-					border:2px solid transparent;
-					margin-bottom: 20px;
-					padding: 5px;
-					&:focus{
-						border:2px solid red;
-					}
-				}
-				input[type="text"],
-				textarea{
-					color: @mediumgrey;
-					font-family: 'Vin\'s Dojo';
-					background: @black;
-					&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-					    color: @darkgrey;
-					}
- 					&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-					   color: @darkgrey;
-					   opacity: 1;
-					}
-					&::-moz-placeholder { /* Mozilla Firefox 19+ */
-					   color: @darkgrey;
-					   opacity: 1;
-					}
- 				}
-				input[type="submit"]{
-					color:@white;
-					text-transform: uppercase;
-					background: red;
-					font-family: 'Avant-Garde';
-					cursor: pointer;
-				}
-			}
-			#coordonnees{
-				.me{
-					font-family: 'Aller Display';
-					.job{
-						text-transform: uppercase;
-					}
-				}
-				.location{
-					font-family: 'Vin\'s Dojo';
-					img{
-						float: left;
-					}
-				}
-				.contact{
-					clear: both;
-					.line{
-						display: block;
-						i{
-							color:red;
-						}
-						.wording{
-							font-family: 'American Type Bold';
-						}						
-					}
-				}				
-			}
-		}
 	}
 	&.landscape{
 		section{
@@ -610,28 +133,4 @@ header{
 	}
 }
 
-footer{
-	background: @black;
-	p{
-		color:@darkgrey;
-		font-size: 10px;
-	}
-	&.landscape{
-		float: left;
-		width: 25px;
-		position: relative;
-		p{
-			.transform(-90deg,0,-112px);
-			position: relative;
-			top: 50%;
-			width: 250px;
-		}
-	}
-	&.portrait{
-		.size(100%,25px);
-		p{
-			text-align: center;
-			line-height: 15px;
-		}
-	}
-}
+

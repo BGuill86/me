@@ -1,0 +1,55 @@
+#about{
+	.third{
+		h2{
+			font-family: 'Aller Display';
+			text-transform: uppercase;
+			text-align: center;
+		}
+		&.time{
+			font-family: 'Avant-Garde';
+			h2.circle{
+				background: url('img/perso.png') no-repeat;
+				background-size: contain;
+				.size(150px);
+				padding: 44px 34px;
+			}
+			.title{
+				font-family: 'Aller Display';
+				text-transform: uppercase;
+				display: inline-block;
+			}
+			.perso .title{ color:#9a0a0a; }
+			.work .title{ color:#e41313; }
+			.dodo .title{ color:#6d0c0c; }
+		}
+		&.qualities,
+		&.hobbies{
+			h2{
+				text-align: right;
+			}
+			ul{
+				background: url('img/bracket.png') no-repeat;
+				background-size: contain;
+				padding-left: 35px;
+			}
+		}
+		&.qualities{
+			ul li{
+				font-family:'American Type';
+			}
+		}
+		&.hobbies{
+			ul li{
+				font-family: 'Aller Display';
+				text-transform: uppercase;
+				display: block;
+				&.cine{ color:@cine; }
+				&.read{ color:@read; }
+				&.geek{ color:@geek; }
+				&.sport{ color:@sport; }
+				&.cook{ color:@cook; }
+				&.chess{ color:@chess; }
+			}
+		}			
+	}
+}

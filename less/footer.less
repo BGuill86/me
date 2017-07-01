@@ -1,0 +1,25 @@
+footer{
+	background: @black;
+	p{
+		color:@darkgrey;
+		font-size: 10px;
+	}
+	&.landscape{
+		float: left;
+		width: 25px;
+		position: relative;
+		p{
+			.transform(-90deg,0,-112px);
+			position: relative;
+			top: 50%;
+			width: 250px;
+		}
+	}
+	&.portrait{
+		.size(100%,25px);
+		p{
+			text-align: center;
+			line-height: 15px;
+		}
+	}
+}

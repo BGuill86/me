@@ -1,0 +1,70 @@
+#contact{
+	.half{
+		width: 50%;
+		float: left;
+	}
+	form#form{
+		input, 
+		textarea{
+			border:none;
+			display: block;
+			font-size: 20px;
+			border:2px solid transparent;
+			margin-bottom: 20px;
+			padding: 5px;
+			&:focus{
+				border:2px solid red;
+			}
+		}
+		input[type="text"],
+		textarea{
+			color: @mediumgrey;
+			font-family: 'Vin\'s Dojo';
+			background: @black;
+			&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			    color: @darkgrey;
+			}
+				&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			   color: @darkgrey;
+			   opacity: 1;
+			}
+			&::-moz-placeholder { /* Mozilla Firefox 19+ */
+			   color: @darkgrey;
+			   opacity: 1;
+			}
+			}
+		input[type="submit"]{
+			color:@white;
+			text-transform: uppercase;
+			background: red;
+			font-family: 'Avant-Garde';
+			cursor: pointer;
+		}
+	}
+	#coordonnees{
+		.me{
+			font-family: 'Aller Display';
+			.job{
+				text-transform: uppercase;
+			}
+		}
+		.location{
+			font-family: 'Vin\'s Dojo';
+			img{
+				float: left;
+			}
+		}
+		.contact{
+			clear: both;
+			.line{
+				display: block;
+				i{
+					color:red;
+				}
+				.wording{
+					font-family: 'American Type Bold';
+				}						
+			}
+		}				
+	}
+}

@@ -1,0 +1,71 @@
+#work{
+	.logo-adv{
+		width: 22%;
+		display: inline-block;
+		a{
+		    display: block;
+		    margin: 0 auto;
+		    width: 132px;					
+		}
+	}
+	.logo-nm{
+		width: 55%;
+		display: inline-block;
+		a{
+		    display: block;
+		    margin: 0 auto;
+		    width: 235px;					
+		}
+	}
+	img.timeline{
+		width: 100%;
+	}
+	.duration{
+		font-family:'Aller Display';
+		.century{
+			color:@darkmediumgrey;
+			font-size: 20px;
+		}
+	}
+	.company{
+		display: inline-block;
+		text-align: center;
+		&.adveris{
+			width: 22%;
+			.gt{ color:@adveris; }
+			.periode,
+			.year{
+				display: block;
+			}
+			.more{
+				background: @adveris;
+			}
+		}
+		&.nm{
+			width: 55%;
+			.start{
+				display: inline-block;
+				.firstday{
+
+				}
+			}
+			.gt{ 
+				color:@nm;
+			}
+			.more{
+				background: @nm;
+			}
+		}
+	}
+	.block{
+		width: 75%;
+		padding: 10px;
+		display: none;
+		&.adveris{
+			background: url('img/bulle_adv.png') no-repeat bottom right, @adveris;
+		}
+		&.nm{
+			background: url('img/bulle_nm.png') no-repeat bottom right, @nm;
+		}
+	}
+}
