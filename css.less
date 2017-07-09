@@ -123,6 +123,19 @@
 		section{
 			&.active{
 				height: 400px;
+				overflow: hidden;
+				.content{
+					width: auto;
+					height: 400px;
+					overflow: auto;
+					margin: 0;
+				}
+			}
+			a.opener{
+				height: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;				
 			}
 		}
 	}

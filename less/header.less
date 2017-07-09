@@ -54,20 +54,32 @@ header{
 		}
 	}
 	&.portrait{
+		height: 40px;
 		nav{
 			position: absolute;
 			top: 0;
-
-			&.menu{ left:0; }
-			&.socials{ right: 0; }
+			&.menu,
+			&.socials{
+				height: 40px;
+				display: flex;
+				align-items: center;
+			}
+			&.menu{
+				left:0;
+				float: left;
+			}
+			&.socials{
+				right: 0;
+				float: right;
+			}
 			a{
 				display: inline-block;
 				i.fa{
 					display: inline-block;
 				}
 			}
-			&.menu{ float: left; }
-			&.socials{ float: right; }
+			&.menu{  }
+			&.socials{  }
 		}
 	}
 }

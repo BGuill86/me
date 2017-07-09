@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     		if(wwindow < 900){
                 // on ferme le slide actif
-                $(activePanel).animate({height: "20px"}, 200);
+                $(activePanel).animate({height: "40px"}, 200);
 
                 //... que l'on ouvre ensuite !
                 newActivePanel.animate({height: "400px"}, 200, function(){
@@ -93,9 +93,9 @@ $(document).ready(function(){
     	if(wwindow < 900){
 
     		$('header, #container, footer').removeClass('landscape').addClass('portrait');
-    		$('header, a.opener').height('20px');
+    		$('header, a.opener').height('40px');
 
-            $('section').height('20px').width(wwindow);
+            $('section').height('40px').width(wwindow);
     		$('section.active').height('400px').width(wwindow);
 
     	}else{
