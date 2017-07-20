@@ -3,8 +3,6 @@ header.landscape
     each icon, link in {'home':'home','about':'user','skills':'cog','work':'briefcase','education':'graduation-cap','contact':'envelope'}
       a(class=link)
         i.fa.fa-2(class='fa-'+icon)
-    a.bars
-      i.fa.fa-bars
 
   span#welcome 
     |WELC
@@ -15,3 +13,5 @@ header.landscape
     each href, icon in {'linkedin':'https://fr.linkedin.com/pub/benoit-guillaume/83/2/a55','twitter':'https://twitter.com/BGllm?lang=fr','google-plus':'#'}
       a(href=href)
         i.fa.fa-2(class='fa-'+icon,target="_blank")
+    a.toggleNavs
+      i.fa.fa-bars

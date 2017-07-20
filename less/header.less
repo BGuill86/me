@@ -73,13 +73,14 @@ header{
 				float: right;
 			}
 			a{
-				display: inline-block;
+				visibility: hidden;
 				i.fa{
 					display: inline-block;
 				}
+				&.toggleNavs{
+					visibility: visible;
+				}
 			}
-			&.menu{  }
-			&.socials{  }
 		}
 	}
 }

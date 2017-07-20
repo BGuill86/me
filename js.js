@@ -139,4 +139,10 @@ $(document).ready(function(){
         }
     });
 
+    // mode portrait, cache/montre les menus dans le header
+    $('a.toggleNavs').on('click', function(){
+        $('nav.menu a, nav.socials a').css('visibility','visible');
+        $('span#welcome').css('visibility','hidden');
+    });
+
 });
