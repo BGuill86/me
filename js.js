@@ -40,7 +40,7 @@ $(document).ready(function(){
             // selon si l'on a cliqué sur un titre de section ou un lien du menu, on donne sa valeur à newActivePanel...
             newActivePanel = (this.tagName == 'SECTION' ? $(this) : $('section#'+$(this).attr('class')));
 
-    		if(wwindow < 900){
+    		if(wwindow < 544){
                 // on ferme le slide actif
                 $(activePanel).animate({height: "40px"}, 200);
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
 	});
 
     // Au chargement de la page...
-    if(wwindow < 900){
+    if(wwindow < 544){
 
     	$('header, #container, footer').removeClass('landscape').addClass('portrait');
 
@@ -90,7 +90,7 @@ $(document).ready(function(){
     	wwindow = $(window).width();
     	// $('#container.landscape').width(wwindow);
 
-    	if(wwindow < 900){
+    	if(wwindow < 544){
 
     		$('header, #container, footer').removeClass('landscape').addClass('portrait');
     		$('header, a.opener').height('40px');

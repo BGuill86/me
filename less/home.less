@@ -28,7 +28,6 @@
 			padding: 5px;
 			.size(30px);
 			text-align: center;
-			margin-right: 5px;
 			cursor: pointer;
 			align-items: center;
 			justify-content: center;
@@ -36,6 +35,9 @@
 				i{
 					font-size: 26px;
 				}
+			}
+			&:not(:last-child){
+				margin-right: 5px;
 			}
 			i{
 				color:@darkgrey;
@@ -47,6 +49,35 @@
 					color: @white;
 				}
 			}
+		}
+	}
+	@media screen and (max-width: 544px) {
+		.content{
+			margin-top: 25px !important;
+			h1,p{
+				text-align: center;
+			}
+			h1{
+				font-size: 1.4rem;
+				margin: 0 70px;
+			}
+			p{
+				&.myNameIs{
+					font-size: 1.4rem;
+				}
+				&.intro{
+					font-size: 1.1rem;
+					line-height: 1.3rem;
+					margin: 25px 70px;
+				}
+			}
+			.pictos{
+				display: flex;
+				justify-content: center;
+				a{
+					margin: 0 10px;
+				}
+			}			
 		}
 	}
 }
