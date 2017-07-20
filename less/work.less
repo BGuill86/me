@@ -22,9 +22,20 @@
 	}
 	.duration{
 		font-family:'Aller Display';
-		.century{
-			color:@darkmediumgrey;
-			font-size: 20px;
+		margin-bottom: 20px;
+		.gt{
+			margin: 0 5px;
+		}
+		.year{
+			.century,
+			.current,
+			.now{
+				font-size: 40px;
+				line-height: 25px;
+			}
+			.century{
+				color:@darkmediumgrey;
+			}
 		}
 	}
 	.company{
@@ -37,20 +48,35 @@
 			.year{
 				display: block;
 			}
+			.periode{
+				font-size: 22px;
+			}
 			.more{
 				background: @adveris;
 			}
 		}
 		&.nm{
 			width: 55%;
+			.duration{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 			.start{
+				text-align: right;
 				display: inline-block;
 				.firstday{
-
+					font-size: 22px;
 				}
 			}
 			.gt{ 
 				color:@nm;
+				font-size: 40px;
+				height: 50px;
+			}
+			.now{
+				font-size: 40px;
+				height: 45px;
 			}
 			.more{
 				background: @nm;
