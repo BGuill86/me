@@ -42,6 +42,7 @@ header{
 			position: absolute;
 			top: 50%;
 			width: 250px;
+			visibility: visible !important;
 		}
 		nav{
 			width: 100%;
@@ -49,6 +50,10 @@ header{
 			a{
 				width: 100%;
 				text-align: center;
+				visibility: visible !important;
+				&.toggleNavs{
+					display: none;
+				}
 			}
 			&.socials{ bottom: 0; }
 		}

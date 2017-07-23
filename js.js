@@ -140,9 +140,13 @@ $(document).ready(function(){
     });
 
     // mode portrait, cache/montre les menus dans le header
+    
+    var visibility = 'visible';
+
     $('a.toggleNavs').on('click', function(){
-        $('nav.menu a, nav.socials a').css('visibility','visible');
-        $('span#welcome').css('visibility','hidden');
+        $('nav.menu a, nav.socials a:not(.toggleNavs)').css('visibility',visibility);
+        visibility = (visibility == 'visible' ? 'hidden' : 'visible' );
+        $('span#welcome').css('visibility',visibility);
     });
 
 });

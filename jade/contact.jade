@@ -9,7 +9,7 @@ section#contact
       input(type='submit',value='Envoyer')
     #coordonnees.half
       .me 
-          .name Benoit GUILLAUME
+          .name Benoît GUILLAUME
           .job Développeur web front-end
       .location
           img(src="img/paris.png")
@@ -17,7 +17,14 @@ section#contact
             .city 75019 PARIS 
             .country FRANCE
       .contact
-          each wording, icon in {'envelope':'bnt.gllm@gmail.com','mobile fa-2':'06 27 80 76 48','file-pdf-o':'mon C.V.'}
+        
+          mixin line(href,icon,wording)
             .line
+              a(href=href)
                 i.fa.fa-2(class='fa-'+icon)
                 span.wording= wording
+
+          +line('mailto:bnt.gllm@gmail.com','envelope','bnt.gllm@gmail.com')
+          +line('#','mobile fa-2','06 27 80 76 48')
+          +line('cv.pdf','file-pdf-o','Mon C.V.')
+

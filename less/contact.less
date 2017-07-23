@@ -6,6 +6,7 @@
 	form#form{
 		input, 
 		textarea{
+			width: 80%;
 			border:none;
 			display: block;
 			font-size: 20px;
@@ -16,6 +17,10 @@
 				border:2px solid red;
 			}
 		}
+		textarea{
+			max-width: 80%;
+			min-height: 111px;
+		}
 		input[type="text"],
 		textarea{
 			color: @mediumgrey;
@@ -25,10 +30,10 @@
 			    font-family: 'Vin\'s Dojo';
 			    color: @darkgrey;
 			}
-				&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 			    font-family: 'Vin\'s Dojo';
-			   color: @darkgrey;
-			   opacity: 1;
+			    color: @darkgrey;
+			    opacity: 1;
 			}
 			&::-moz-placeholder { /* Mozilla Firefox 19+ */
 			    font-family: 'Vin\'s Dojo';
@@ -38,35 +43,61 @@
 			}
 		input[type="submit"]{
 			color:@white;
-			text-transform: uppercase;
 			background: red;
+			text-transform: uppercase;
 			font-family: 'Avant-Garde';
 			cursor: pointer;
+			&:hover{
+				color:red;
+				background: @white;
+			}
 		}
 	}
 	#coordonnees{
 		.me{
 			font-family: 'Aller Display';
+			font-size: 1.4rem;
+			margin-bottom: 25px;
 			.job{
 				text-transform: uppercase;
 			}
 		}
 		.location{
 			font-family: 'Vin\'s Dojo';
+			font-size: 1.3rem;
+			display: flex;
+			align-items: center;
+			margin-bottom: 25px;
 			img{
 				float: left;
 			}
 		}
 		.contact{
 			clear: both;
+			font-size: 1.1rem;
 			.line{
 				display: block;
-				i{
-					color:red;
+				margin-bottom: 5px;
+				a{
+					color:@white;
+					text-decoration: none;
+					&:hover{
+						color:red;
+					}
+					i{
+						color: red;
+						width: 35px;
+						text-align: center;
+					}
+					&:nth-child(2){
+						i{
+							font-size: 26px;
+						}
+					}
+					.wording{
+						font-family: 'American Type Bold';
+					}						
 				}
-				.wording{
-					font-family: 'American Type Bold';
-				}						
 			}
 		}				
 	}
