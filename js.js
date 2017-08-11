@@ -19,6 +19,31 @@ $(document).ready(function(){
         return content;
     }
 
+    function activePanelHeight(panelId){
+        switch(panelId){
+           case 'home':
+            newHeight = '420px';
+           break;
+           case 'about':
+            newHeight = '550px';
+           break;
+           case 'skills':
+            newHeight = '400px';
+           break;
+           case 'work':
+            newHeight = '400px';
+           break;
+           case 'education':
+            newHeight = '400px';
+           break;
+           case 'contact':
+            newHeight = '400px';
+           break;
+        }
+
+        return newHeight;      
+    }
+
     // hover logo adveris + NM
     $('.logo a img')
         .on('mouseover', function(){
@@ -44,8 +69,10 @@ $(document).ready(function(){
                 // on ferme le slide actif
                 $(activePanel).animate({height: "40px"}, 200);
 
+                activePanelHeight(newActivePanel.attr('id'));
+
                 //... que l'on ouvre ensuite !
-                newActivePanel.animate({height: "400px"}, 200, function(){
+                newActivePanel.animate({height: newHeight}, 200, function(){
                     $(this).find('.content').fadeIn(400);
                 });
 
@@ -96,7 +123,10 @@ $(document).ready(function(){
     		$('header, a.opener').height('40px');
 
             $('section').height('40px').width(wwindow);
-    		$('section.active').height('400px').width(wwindow);
+
+            activePanelHeight($('section.active').attr('id'));
+
+    		$('section.active').height(newHeight).width(wwindow);
 
     	}else{
 
