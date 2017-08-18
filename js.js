@@ -41,7 +41,7 @@ $(document).ready(function(){
            break;
         }
 
-        return newHeight;      
+        return newHeight;
     }
 
     // hover logo adveris + NM
@@ -146,7 +146,7 @@ $(document).ready(function(){
     $('a.close').on('click', function(){
         var block = $('.block:visible');
         block.hide();
-        $('.more').text('+');  
+        $('.more').text('+');
     });
 
     // popups work & education
@@ -156,13 +156,13 @@ $(document).ready(function(){
         var formation = parent.attr('class').split(' ')[1];
         var block = $('.block.'+formation);
 
-        $('.block').hide(); 
+        $('.block').hide();
 
         if($(this).text() == '+'){
             block.show();
             $('.more').text('+');
-            $(this).text('-');  
-        
+            $(this).text('-');
+
         }else{
             $(this).text('+');
 
@@ -170,7 +170,7 @@ $(document).ready(function(){
     });
 
     // mode portrait, cache/montre les menus dans le header
-    
+
     var visibility = 'visible';
 
     $('a.toggleNavs').on('click', function(){

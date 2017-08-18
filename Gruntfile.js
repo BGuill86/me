@@ -36,6 +36,24 @@ module.exports = function(grunt){
 					'min.js': ['js.js']
 				}
 			}
+		},
+
+		watch: {
+			html: {
+				files: ['index.jade','jade/*.jade'],
+				tasks: ['jade'],
+				options: { spawn:false }
+			},
+			css: {
+				files: ['css.less','css/*.less'],
+				tasks: ['less','cssmin'],
+				options: { spawn:false }
+			},
+			js: {
+				files: ['js.js'],
+				tasks: ['uglify','jshint'],
+				options: { spawn:false }
+			}
 		}
 
 	});
@@ -45,6 +63,9 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	// regroupement de tâches grunt
 	grunt.registerTask('default', ['jade','less','cssmin','uglify', 'jshint']);
 
 };
