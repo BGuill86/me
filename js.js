@@ -3,7 +3,9 @@ $(document).ready(function(){
 	var wwindow = $(window).width();
 	// $('#container.landscape').width(wwindow);
 
-	activePanel = $("#container section:first");
+    url = window.location.href;
+    activePanel = (url.indexOf('#') == -1) ? $("#container section:first") : $("#container section#" + url.split('#')[1]) ;
+
 	$(activePanel).addClass('active');
 
 	activeMenu = $("nav.menu a:first");
@@ -34,7 +36,7 @@ $(document).ready(function(){
             newHeight = '400px';
            break;
            case 'education':
-            newHeight = '400px';
+            newHeight = '1116px';
            break;
            case 'contact':
             newHeight = '400px';
@@ -73,7 +75,7 @@ $(document).ready(function(){
 
                 //... que l'on ouvre ensuite !
                 newActivePanel.animate({height: newHeight}, 200, function(){
-                    $(this).find('.content').fadeIn(400);
+                    $(this).find('.content').fadeIn(400).height(newHeight);
                 });
 
     		}else{

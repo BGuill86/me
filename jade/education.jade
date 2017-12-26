@@ -1,5 +1,5 @@
 section#education
-  a.opener 
+  a.opener(href="#education")
     span.wording Cursus étudiant
   .content
     .description
@@ -40,36 +40,38 @@ section#education
         p Apprentissage poussé du développement web : PHP, Symfony2, Javascript
         p Projets annuels pour valider l'année
         p Stages en fin de chaque année pour valider les acquis en milieu professionnel
-    img.timeline(src='img/timeline_studies.png')
-    .formation.ecv
-      .when 2005-2006
-      .what Prépa artisitique
-      .where ECV Aquitaine
-      .city BORDEAUX
-      a.more +
-    .formation.quimper
-      .when 2005-2006
-      .what Mise à Niveau Arts Appliqués
-      .when 2006-2008
-      .what BTS Communication Visuelle option Print (GEP)
-      .where Lycée Le Paraclet
-      .city QUIMPER
-      a.more +
-    .formation.fcil
-      .when 2008-2009
-      .what FCIL Assistant Print et Web Designer
-      .where Lycée La Joliverie
-      .city NANTES
-      a.more +
-    .formation.lpcm
-      .when 2009-2010
-      .what Licence Pro Création Multimédia
-      .where Université
-      .city LA ROCHELLE
-      a.more +
-    .formation.estei
-      .when 2010-2012
-      .what Master Développement Web
-      .where ESTEI
-      .city BORDEAUX
-      a.more +
+    img.timeline.landscape(src='img/timeline_studies.png')
+    img.timeline.portrait(src='img/timeline_studies-xs.png')
+    ul.formations
+      li.formation.ecv
+        .when 2005-2006
+        .what Prépa artisitique
+        .where ECV Aquitaine
+        .city BORDEAUX
+        a.more +
+      li.formation.quimper
+        .when 2005-2006
+        .what Mise à Niveau Arts Appliqués
+        .when 2006-2008
+        .what BTS Communication Visuelle option Print (GEP)
+        .where Lycée Le Paraclet
+        .city QUIMPER
+        a.more +
+      li.formation.fcil
+        .when 2008-2009
+        .what FCIL Assistant Print et Web Designer
+        .where Lycée La Joliverie
+        .city NANTES
+        a.more +
+      li.formation.lpcm
+        .when 2009-2010
+        .what Licence Pro Création Multimédia
+        .where Université
+        .city LA ROCHELLE
+        a.more +
+      li.formation.estei
+        .when 2010-2012
+        .what Master Développement Web
+        .where ESTEI
+        .city BORDEAUX
+        a.more +
