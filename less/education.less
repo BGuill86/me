@@ -38,16 +38,19 @@
 		}
 	}
 	img.timeline{
-		width: 100%;
-		padding-bottom: 25px;
+		&.landscape{
+			width: 100%;
+			padding-bottom: 25px;
+		}
+		&.portrait{ display: none; }
 	}
 	.formation{
-			text-align: center;
-			display: inline-block;
-			float: left;
-			max-width: 250px;
-			height: 200px;
-			padding: 0 12px;
+		text-align: center;
+		display: inline-block;
+		float: left;
+		max-width: 250px;
+		height: 200px;
+		padding: 0 12px;
 		.when{
 			font-family: 'Aller Display';
 		}
@@ -97,5 +100,18 @@
 				background:@estei;
 			}
 		}				
+	}
+	.portrait & {
+		img.timeline{
+			&.landscape{ display: none; }
+			&.portrait{
+				display: block;
+				float: left;
+			}	
+		}
+		.formations{
+			display: flex;
+			flex-direction: column-reverse;
+		}
 	}
 }

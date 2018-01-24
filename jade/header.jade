@@ -1,7 +1,7 @@
 header.landscape
   nav.menu 
     each icon, link in {'home':'home','about':'user','skills':'cog','work':'briefcase','education':'graduation-cap','contact':'envelope'}
-      a(class=link)
+      a(class=link, href='#'+link)
         i.fa.fa-2(class='fa-'+icon)
 
   span#welcome 
