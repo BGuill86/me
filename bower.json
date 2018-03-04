@@ -3,10 +3,10 @@
   "description": "",
   "main": "Gruntfile.js",
   "authors": [
-    "benoit <bguillaume@newmanity.com>"
+    "bnt.gllm@gmail.com"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/BGuill86/me",
   "ignore": [
     "**/.*",
     "node_modules",
